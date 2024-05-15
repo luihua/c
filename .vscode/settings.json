@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.m,*.mlx": "matlab",
+        "sys.h": "c",
+        "stm32f1xx.h": "c",
+        "typeinfo": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
+}
