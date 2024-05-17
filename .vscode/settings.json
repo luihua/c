@@ -6,4 +6,5 @@
         "typeinfo": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
+    
 }
