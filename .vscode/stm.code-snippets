@@ -97,7 +97,7 @@
 			"prefix":[ "/link"],
 			"body": [
 				"ListNode *head=nullptr;",
-				"head=new ListNode(1)",
+				"head=new ListNode(1);",
 				"head->next=new ListNode(2);",
 				"head->next->next= new ListNode(2);",
 				"head->next->next->next = new ListNode(3);",
@@ -108,6 +108,20 @@
 		],
 		"description": "head",
 		"scope": "c,cpp",
+		
 },
+"List_Struct": {
+	"prefix": "/lists",
+	"body": [
+	  "struct ListNode {",
+	  "      int val;",
+	  "      ListNode *next;",
+	  "      ListNode() : val(0), next(nullptr) {}",
+	  "      ListNode(int x) : val(x), next(nullptr) {}",
+	  "      ListNode(int x, ListNode *next) : val(x), next(next) {}",
+	  "  };"
+	],
+	"description": "List_Struct"
+  },
 
 }
