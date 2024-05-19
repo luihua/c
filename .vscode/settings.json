@@ -5,6 +5,7 @@
         "stm32f1xx.h": "c",
         "typeinfo": "cpp"
     },
-    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
+    "cmake.sourceDirectory": "D:/c"
     
 }

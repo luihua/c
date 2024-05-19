@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/c/build",
+  "command": "D:\\MSYS2\\ucrt64\\bin\\g++.exe   -g -o CMakeFiles\\Tutorial.dir\\bitree.cpp.obj -c D:\\c\\bitree.cpp",
+  "file": "D:/c/bitree.cpp",
+  "output": "CMakeFiles/Tutorial.dir/bitree.cpp.obj"
+}
+]
