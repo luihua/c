@@ -1,4 +1,9 @@
+#cmake -G"MinGW Makefiles" ..
+#使用cmake插件默认将Makefile文件生成到{workfolder}/build
+
 cmake_minimum_required(VERSION 3.15)
+
+
 
 # set the project name
 project(Tutorial VERSION 1.0.1)
