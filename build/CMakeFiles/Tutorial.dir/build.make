@@ -68,28 +68,28 @@ include CMakeFiles/Tutorial.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Tutorial.dir/flags.make
 
-CMakeFiles/Tutorial.dir/bitree.cpp.obj: CMakeFiles/Tutorial.dir/flags.make
-CMakeFiles/Tutorial.dir/bitree.cpp.obj: D:/c/bitree.cpp
-CMakeFiles/Tutorial.dir/bitree.cpp.obj: CMakeFiles/Tutorial.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\c\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tutorial.dir/bitree.cpp.obj"
-	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tutorial.dir/bitree.cpp.obj -MF CMakeFiles\Tutorial.dir\bitree.cpp.obj.d -o CMakeFiles\Tutorial.dir\bitree.cpp.obj -c D:\c\bitree.cpp
+CMakeFiles/Tutorial.dir/tutorial.cpp.obj: CMakeFiles/Tutorial.dir/flags.make
+CMakeFiles/Tutorial.dir/tutorial.cpp.obj: D:/c/tutorial.cpp
+CMakeFiles/Tutorial.dir/tutorial.cpp.obj: CMakeFiles/Tutorial.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\c\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tutorial.dir/tutorial.cpp.obj"
+	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tutorial.dir/tutorial.cpp.obj -MF CMakeFiles\Tutorial.dir\tutorial.cpp.obj.d -o CMakeFiles\Tutorial.dir\tutorial.cpp.obj -c D:\c\tutorial.cpp
 
-CMakeFiles/Tutorial.dir/bitree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tutorial.dir/bitree.cpp.i"
-	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c\bitree.cpp > CMakeFiles\Tutorial.dir\bitree.cpp.i
+CMakeFiles/Tutorial.dir/tutorial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tutorial.dir/tutorial.cpp.i"
+	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\c\tutorial.cpp > CMakeFiles\Tutorial.dir\tutorial.cpp.i
 
-CMakeFiles/Tutorial.dir/bitree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tutorial.dir/bitree.cpp.s"
-	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\c\bitree.cpp -o CMakeFiles\Tutorial.dir\bitree.cpp.s
+CMakeFiles/Tutorial.dir/tutorial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tutorial.dir/tutorial.cpp.s"
+	D:\MSYS2\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\c\tutorial.cpp -o CMakeFiles\Tutorial.dir\tutorial.cpp.s
 
 # Object files for target Tutorial
 Tutorial_OBJECTS = \
-"CMakeFiles/Tutorial.dir/bitree.cpp.obj"
+"CMakeFiles/Tutorial.dir/tutorial.cpp.obj"
 
 # External object files for target Tutorial
 Tutorial_EXTERNAL_OBJECTS =
 
-Tutorial.exe: CMakeFiles/Tutorial.dir/bitree.cpp.obj
+Tutorial.exe: CMakeFiles/Tutorial.dir/tutorial.cpp.obj
 Tutorial.exe: CMakeFiles/Tutorial.dir/build.make
 Tutorial.exe: CMakeFiles/Tutorial.dir/linkLibs.rsp
 Tutorial.exe: CMakeFiles/Tutorial.dir/objects1.rsp

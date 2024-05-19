@@ -128,29 +128,29 @@ Tutorial/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/build
 .PHONY : Tutorial/fast
 
-bitree.obj: bitree.cpp.obj
-.PHONY : bitree.obj
+tutorial.obj: tutorial.cpp.obj
+.PHONY : tutorial.obj
 
 # target to build an object file
-bitree.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/bitree.cpp.obj
-.PHONY : bitree.cpp.obj
+tutorial.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.obj
+.PHONY : tutorial.cpp.obj
 
-bitree.i: bitree.cpp.i
-.PHONY : bitree.i
+tutorial.i: tutorial.cpp.i
+.PHONY : tutorial.i
 
 # target to preprocess a source file
-bitree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/bitree.cpp.i
-.PHONY : bitree.cpp.i
+tutorial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.i
+.PHONY : tutorial.cpp.i
 
-bitree.s: bitree.cpp.s
-.PHONY : bitree.s
+tutorial.s: tutorial.cpp.s
+.PHONY : tutorial.s
 
 # target to generate assembly for a file
-bitree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/bitree.cpp.s
-.PHONY : bitree.cpp.s
+tutorial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.s
+.PHONY : tutorial.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Tutorial
-	@echo ... bitree.obj
-	@echo ... bitree.i
-	@echo ... bitree.s
+	@echo ... tutorial.obj
+	@echo ... tutorial.i
+	@echo ... tutorial.s
 .PHONY : help
 
 

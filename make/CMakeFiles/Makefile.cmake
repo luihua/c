@@ -30,6 +30,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/CMake/share/cmake-3.28/Modules/Platform/Windows.cmake"
   "D:/CMake/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake"
   "D:/c/CMakeLists.txt"
+  "D:/c/TutorialConfig.h.in"
   "CMakeFiles/3.28.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.5/CMakeRCCompiler.cmake"
@@ -44,6 +45,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "TutorialConfig.h"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

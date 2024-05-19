@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Tutorial.dir/bitree.cpp.obj"
-  "CMakeFiles/Tutorial.dir/bitree.cpp.obj.d"
+  "CMakeFiles/Tutorial.dir/tutorial.cpp.obj"
+  "CMakeFiles/Tutorial.dir/tutorial.cpp.obj.d"
   "Tutorial.exe"
   "Tutorial.exe.manifest"
   "Tutorial.pdb"

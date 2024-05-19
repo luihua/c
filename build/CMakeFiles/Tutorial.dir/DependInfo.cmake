@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/c/bitree.cpp" "CMakeFiles/Tutorial.dir/bitree.cpp.obj" "gcc" "CMakeFiles/Tutorial.dir/bitree.cpp.obj.d"
+  "D:/c/tutorial.cpp" "CMakeFiles/Tutorial.dir/tutorial.cpp.obj" "gcc" "CMakeFiles/Tutorial.dir/tutorial.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
