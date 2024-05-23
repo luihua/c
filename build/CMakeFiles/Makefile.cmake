@@ -35,6 +35,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.28.5/CMakeSystem.cmake"
+  "D:/c/data_struct/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -47,9 +48,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "TutorialConfig.h"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "data_struct/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Tutorial.dir/DependInfo.cmake"
+  "data_struct/CMakeFiles/MathFunctions.dir/DependInfo.cmake"
   )

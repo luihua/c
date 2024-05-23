@@ -1,3 +1,6 @@
 D:/c/build/CMakeFiles/Tutorial.dir
 D:/c/build/CMakeFiles/edit_cache.dir
 D:/c/build/CMakeFiles/rebuild_cache.dir
+D:/c/build/data_struct/CMakeFiles/MathFunctions.dir
+D:/c/build/data_struct/CMakeFiles/edit_cache.dir
+D:/c/build/data_struct/CMakeFiles/rebuild_cache.dir

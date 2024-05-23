@@ -11,6 +11,7 @@
 #define HARDWARE 0
 #define SOFTWARE 1
 #define ALL 2
+#define MAXSIZE 10
 
 /*************************************************************************************************/
 /*******************************************MACRO-END*********************************************/
@@ -80,3 +81,8 @@ void InThread(ThreadTree T);
 void visit(Threadnode *p);
 void CreateLeftTree(Threadnode *p);
 void CreatRightTree(Threadnode *p);
+Threadnode* Firstnode(ThreadTree T);
+void traversalBitree(ThreadTree T);
+
+extern unsigned int x;
+extern Threadnode *pre;

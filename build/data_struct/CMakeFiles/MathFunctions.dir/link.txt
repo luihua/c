@@ -1,0 +1,2 @@
+D:\MSYS2\ucrt64\bin\ar.exe qc libMathFunctions.a CMakeFiles/MathFunctions.dir/bitree.cpp.obj
+D:\MSYS2\ucrt64\bin\ranlib.exe libMathFunctions.a

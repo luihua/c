@@ -128,29 +128,42 @@ Tutorial/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/build
 .PHONY : Tutorial/fast
 
-tutorial.obj: tutorial.cpp.obj
-.PHONY : tutorial.obj
+#=============================================================================
+# Target rules for targets named MathFunctions
+
+# Build rule for target.
+MathFunctions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MathFunctions
+.PHONY : MathFunctions
+
+# fast build rule for target.
+MathFunctions/fast:
+	$(MAKE) $(MAKESILENT) -f data_struct\CMakeFiles\MathFunctions.dir\build.make data_struct/CMakeFiles/MathFunctions.dir/build
+.PHONY : MathFunctions/fast
+
+main.obj: main.cpp.obj
+.PHONY : main.obj
 
 # target to build an object file
-tutorial.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.obj
-.PHONY : tutorial.cpp.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-tutorial.i: tutorial.cpp.i
-.PHONY : tutorial.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-tutorial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.i
-.PHONY : tutorial.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-tutorial.s: tutorial.cpp.s
-.PHONY : tutorial.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-tutorial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/tutorial.cpp.s
-.PHONY : tutorial.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tutorial.dir\build.make CMakeFiles/Tutorial.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -160,10 +173,11 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... MathFunctions
 	@echo ... Tutorial
-	@echo ... tutorial.obj
-	@echo ... tutorial.i
-	@echo ... tutorial.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 
