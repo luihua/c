@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:/keil/4，程序源码/2，标准例程-HAL库版本/实验1 跑马灯实验/Drivers"
+             
                 
             ],
 

@@ -1,4 +1,4 @@
-#cmake -G"MinGW Makefiles" ..  
+#cmake -G"MinGW Makefiles" .. 接cmakefile.txt路径 ,
 #使用cmake插件默认将Makefile文件生成到{workfolder}/build
 set(CMAKE_C_COMPILER "D:\\MSYS2\\ucrt64\\bin\\gcc.exe")
 set(CMAKE_CXX_COMPILER "D:\\MSYS2\\ucrt64\\bin\\g++.exe")

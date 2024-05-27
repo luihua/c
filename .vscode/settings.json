@@ -6,6 +6,7 @@
         "typeinfo": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
-    "cmake.sourceDirectory": "D:/c"
+    "cmake.sourceDirectory": "D:/c",
+    "python.analysis.typeCheckingMode": "basic"
     
 }
