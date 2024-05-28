@@ -15,9 +15,10 @@ lamda_2 = [1541.095, 1541.092, 1541.090, 1541.093, 1541.094, 1541.091];
 test1_point_k = c * (lamda_1 - lamda0_1) / lamda0_1;
 test2_point_k = c * (lamda_2 - lamda0_2) / lamda0_2;
 n = interval * cos(alpha);
+xlength=length(x);
 
-for index = 1:size(x)
-    i = uint8(x(index) / n);
+for index = 1:xlength
+    i = fix(x(index) / n);
     k1(index) = solve((k - test1_point_k(i + 1)) / x(index) == (test1_point_k(i + 2) - test1_point_k(i + 1)) / (i + 1) * n);
     
 end
