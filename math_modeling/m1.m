@@ -19,7 +19,7 @@ n = interval * cos(alpha);
 for index = 1:size(x)
     i = uint8(x(index) / n);
     k1(index) = solve((k - test1_point_k(i + 1)) / x(index) == (test1_point_k(i + 2) - test1_point_k(i + 1)) / (i + 1) * n);
-
+    
 end
 
 
