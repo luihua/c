@@ -1,25 +1,99 @@
 clear all;
-%å‡è®¾å˜å½¢åçš„æ›²çº¿ä¸ºC2ï¼ˆæ›²ç‡è¿ç»­ï¼‰ä»¥ä¸Šè¿ç»­ï¼Œå³å­˜åœ¨äºŒé˜¶å¯¼æ•°ä¸”è¿ç»­
-%å§“åï¼šè´¾å­åº·
-%å­¦å·ï¼š2023201210
+%¼ÙÉè±äĞÎºóµÄÇúÏßÎªC2£¨ÇúÂÊÁ¬Ğø£©ÒÔÉÏÁ¬Ğø£¬¼´´æÔÚ¶ş½×µ¼ÊıÇÒÁ¬Ğø
+%ĞÕÃû£º¼Ö×Ó¿µ
+%Ñ§ºÅ£º2023201210
 syms k;
-alpha = pi / 4; %å…‰çº¤åœ¨å¹³é¢å†…å—åŠ›ååœ¨åˆå§‹ä½ç½®çš„åˆ‡çº¿ä¸æ°´å¹³æ–¹å‘çš„å¤¹è§’
-c = 4200; %æ³¢é•¿ä¸æ›²çº¿æ›²ç‡å‡½æ•°ä¹‹é—´çš„å¸¸æ•°é¡¹
-x = 0.3:0.1:0.7; %æ‰€æ±‚æ›²ç‡çš„æ¨ªåæ ‡
-k1 = zeros(size(x));
-k2 = k1;
-lamda0_1 = 1529;
+% syms y(t);
+alpha = pi / 4; %¹âÏËÔÚÆ½ÃæÄÚÊÜÁ¦ºóÔÚ³õÊ¼Î»ÖÃµÄÇĞÏßÓëË®Æ½·½ÏòµÄ¼Ğ½Ç
+c = 4200; %²¨³¤ÓëÇúÏßÇúÂÊº¯ÊıÖ®¼äµÄ³£ÊıÏî
+x = 0.3:0.1:0.7; %ËùÇóÇúÂÊµÄºá×ø±ê
 interval = 0.6;
+
+lamda0_1 = 1529;
 lamda_1 = [1529.808, 1529.807, 1529.813, 1529.812, 1529.814, 1529.809];
+
 lamda0_2 = 1540;
 lamda_2 = [1541.095, 1541.092, 1541.090, 1541.093, 1541.094, 1541.091];
-test1_point_k = c * (lamda_1 - lamda0_1) / lamda0_1;
-test2_point_k = c * (lamda_2 - lamda0_2) / lamda0_2;
-n = interval * cos(alpha);
+
+test1_point_k = c * (lamda_1 - lamda0_1) / lamda0_1;%
+test2_point_k = c * (lamda_2 - lamda0_2) / lamda0_2;%
+
+
 xlength = length(x);
 
-for index = 1:xlength
-    i = fix(x(index) / n);
-    k1(index) = solve((k - test1_point_k(i + 1)) / (x(index) - i * n) == (test1_point_k(i + 2) - test1_point_k(i + 1)) / n);
-    k2(index) = solve((k - test2_point_k(i + 1)) / (x(index) - i * n) == (test2_point_k(i + 2) - test2_point_k(i + 1)) / n);
+testx=(0:interval:3);
+figure;
+plot(lamda_1,test1_point_k,'ro', 'MarkerFaceColor', 'r');
+hold on;
+xlabel('²¨³¤£¨nm£©');
+ylabel('ÇúÂÊ');
+title('²âÊÔÒ»£º²¨³¤ÓëÇúÂÊ¹ØÏµ')
+grid on;
+
+lamda_1_curv_fit=polyfit(lamda_1,test1_point_k,1);
+
+%²åÖµ·¨½¨Á¢¶àÏîÊ½
+curve_1_testx_fit=spline(testx,test1_point_k);
+curve_2_testx_fit=spline(testx,test2_point_k);
+
+xx = linspace(min(testx), max(testx), 100);
+
+%Í¨¹ıÄâºÏ¶àÏîÊ½Ãè³ö¸÷µã
+yy = ppval(curve_1_testx_fit, xx);
+yy2= ppval(curve_2_testx_fit,xx);
+x_k=ppval(curve_1_testx_fit, x);
+x_k2=ppval(curve_2_testx_fit, x);
+
+%»­³öÔ­Ê¼µãºÍÄâºÏµã
+figure;
+plot(testx, test1_point_k, 'ro', 'MarkerFaceColor', 'r'); % Ô­Ê¼Êı¾İµã1
+hold on;
+plot(x,x_k,'-s','MarkerFaceColor', 'r');
+plot(xx, yy, 'r--'); % ²åÖµÇúÏß1
+
+plot(testx, test2_point_k, 'ro', 'MarkerFaceColor', 'b') % Ô­Ê¼Êı¾İµã1
+plot(x,x_k2,'-s','MarkerFaceColor', 'b');
+
+plot(xx, yy2, 'b-'); % ²åÖµÇúÏß2
+
+legend('Êµ¼ÊÇúÂÊ£¬²âÊÔ1','²åÖµÇúÂÊ£¬²âÊÔ1','ÄâºÏÇúÏß²âÊÔ1','Êµ¼ÊÇúÂÊ£¬²âÊÔ2','²åÖµÇúÂÊ£¬²âÊÔ2','ÄâºÏÇúÏß²âÊÔ2');
+xlabel('x');
+ylabel('curvature');
+title('Spline Interpolation Curve Fitting of curve-x');
+grid on;
+hold off;
+
+
+%³õÊ¼»¯½Ç¶È¼°ºá×İ×ø±ê
+num_points = length(xx);
+y_x1 = zeros(1, num_points);
+y_y1=y_x1;
+y_x2=y_x1;
+y_y2=y_x1;
+theta = zeros(1,num_points);
+theta(1)=alpha;
+theta2=theta;
+
+
+% ½Ç¶È»ı·ÖËã³ö¶ÔÓ¦µÄºá×İ×ø±ê
+for i = 2:num_points
+    dx = xx(i) - xx(i-1);
+    theta(i) = theta(i-1) + yy(i) * dx;
+    theta2(i) = theta2(i-1) + yy2(i) * dx;
+    y_x1(i) = y_x1(i-1) + cos(theta(i)) * dx;
+    y_y1(i) = y_y1(i-1) + sin(theta(i)) * dx;
+    y_x2(i) = y_x2(i-1) + cos(theta2(i)) * dx;
+    y_y2(i) = y_y2(i-1) + sin(theta2(i)) * dx;
 end
+
+
+%»­³öÖØ½¨ÇúÏß
+figure;
+plot(y_x1, y_y1, 'r--'); 
+hold on;
+plot(y_x2, y_y2, 'b-'); 
+legend('ÇúÏß1', 'ÇúÏß2');
+xlabel('X');
+ylabel('Y');
+title('ÖØ½¨ÇúÏß');
+grid on;

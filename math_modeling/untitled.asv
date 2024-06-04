@@ -1,0 +1,94 @@
+clear all;
+
+f = @(x) x.^3 + x;
+f_p = @(x) 3*x.^2 + 1;
+f_2_prime = @(x) 6*x;
+% 定义曲率和弧长微分函数
+curvature = @(x) abs(f_2_prime(x)) ./ (1 + f_p(x).^2).^1.5;
+ds = @(x) sqrt(1 + f_p(x).^2);
+% 计算总弧长
+total_length = integral(ds, 0, 1);
+% 样本数量（例如，曲线上的 10 个样本）
+num_samples = 20;
+sample_spacing = total_length / num_samples;
+% 找到对应于等弧长间距的 x 值
+x_samples = 0;  % 从 x = 0 开始
+current_length = 0;
+% 用数值积分找到对应于给定弧长的 x 的函数
+ length_to_x = @(target_length) fzero(@(x) integral(ds, 0, x) - target_length, [0, 1]);
+% 计算等弧长分布的 x 样本
+for i = 1:num_samples-1
+    current_length = current_length + sample_spacing;
+    x_sample =  length_to_x(current_length);
+    x_samples = [x_samples, x_sample];
+end
+% 计算这些 x 样本的曲率
+ k_fx = arrayfun(curvature, x_samples);
+% 显示结果
+x_samples;
+ k_fx;
+% 绘制曲率变化图
+figure
+plot(x_samples,  k_fx, 'rs-', 'DisplayName', 'curatures')
+title('the variation of curatures')
+xlabel('x')
+ylabel('y）')
+grid on
+legend
+% 重构曲线
+[x_recon, y_recon] = reconstruct_curve_from_curvature(x_samples,  k_fx, pi/4);
+x_fine = linspace(0, 1, 500);
+ k_fx_fine = arrayfun(curvature, x_fine);
+y_fine = arrayfun(f, x_fine);
+% 绘制原始和重构曲线以及曲率分布
+figure
+subplot(2, 1, 1)
+plot(x_fine, y_fine, 'r-', 'DisplayName', 'original line')
+hold on
+plot(x_recon, y_recon, 'g-', 'DisplayName', 'reconstructed line')
+title('原始曲线与重构曲线对比')
+xlabel('X')
+ylabel('Y')
+legend
+grid on
+subplot(2, 1, 2)
+plot(x_fine,  k_fx_fine, 'g-', 'DisplayName', '原始曲线的曲率')
+hold on
+scatter(x_samples,  k_fx, 'filled', 'r', 'DisplayName', '采样点处的曲率')
+title('曲率分布')
+xlabel('X')
+ylabel('曲率 (1/m)')
+legend
+grid on
+sgtitle('曲率分布和曲线重构')
+% 定义曲线重构函数
+function [x_curve, y_curve] = reconstruct_curve( k_fx, initial_angle, x_positions)
+    angles = zeros(size(x_positions));
+    x_curve = zeros(size(x_positions));
+    y_curve = zeros(size(x_positions));
+    
+    angles(1) = initial_angle;
+    x_curve(1) = 0;
+    y_curve(1) = 0;
+    
+    for i = 2:length(x_positions)
+        dx = x_positions(i) - x_positions(i - 1);
+        angles(i) = angles(i - 1) +  k_fx(i) * dx;
+        x_curve(i) = x_curve(i - 1) + cos(angles(i)) * dx;
+        y_curve(i) = y_curve(i - 1) + sin(angles(i)) * dx;
+    end
+end
+%重构曲线的函数
+function [x_reconstructed, y_reconstructed] = reconstruct_curve_from_curvature(x_samples,  k_fx, initial_theta)
+    x_reconstructed = x_samples;
+    y_reconstructed = zeros(size(x_samples));
+    theta = initial_theta;
+    for i = 2:length(x_samples)
+        delta_x = x_samples(i) - x_samples(i - 1);
+        average_curvature = 0.5 * ( k_fx(i) +  k_fx(i - 1));
+        delta_theta = average_curvature * delta_x;
+        theta = theta + delta_theta;
+        x_reconstructed(i) = x_reconstructed(i - 1) + delta_x * cos(theta);
+        y_reconstructed(i) = y_reconstructed(i - 1) + delta_x * sin(theta);
+    end
+end
