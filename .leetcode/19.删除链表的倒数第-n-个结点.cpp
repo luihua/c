@@ -34,14 +34,24 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-    ListNode *h1,*p1;
+    ListNode *h1,*p1,*p2,*ans;
     h1=new ListNode(0,head);
     p1=h1;
-    while (p1->next=)
+    p2=h1;
+    for (int i = 0; i < n; i++)
     {
-        /* code */
+        p2=p2->next;
     }
     
+    while (p2->next!=nullptr)
+    {
+        p1=p1->next;
+        p2=p2->next;
+    }
+    p1->next=p1->next->next;
+    ans=h1->next;
+    delete h1;
+    return ans;
 
 
     }
