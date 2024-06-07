@@ -1,3 +1,10 @@
+// @before-stub-for-debug-begin
+#include <vector>
+#include <string>
+
+using namespace std;
+// @before-stub-for-debug-end
+
 /*
  * @lc app=leetcode.cn id=61 lang=cpp
  *
@@ -36,14 +43,21 @@ public:
         n++;
         
      }
-     if(n==1||n==0)
+     if(n==1||n==0||k==0)
      {
         ans=h1->next;
         // delete h1;
         return ans;
      }
-     p2->next=h1->next;
+  
      n=k%n; 
+     if(n==0||k==0)
+     {
+        ans=h1->next;
+        // delete h1;
+        return ans;
+     }
+        p2->next=h1->next;
      for (int i = 0; i < n; i++)
      {
         p2=p2->next;
@@ -70,15 +84,15 @@ int main()
 {
     Solution S;
     ListNode *head=nullptr,*ans;
-    // head=new ListNode(1);
-    // head->next=new ListNode(2);
-    // head->next->next= new ListNode(3);
+    head=new ListNode(0);
+    head->next=new ListNode(1);
+    head->next->next= new ListNode(2);
     // head->next->next->next = new ListNode(4);
     // head->next->next->next->next = new ListNode(5);
     // head->next->next->next->next->next = new ListNode(6);
     // head->next->next->next->next->next->next= new ListNode(7);
     // head->next->next->next->next->next->next->next= new ListNode(8);
-    ans=S.rotateRight(head,2);
+     ans=S.rotateRight(head,4);
     return 0;
     
 }
