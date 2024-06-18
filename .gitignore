@@ -1,0 +1,12 @@
+.vscode/launch.json
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+*.json
+*.o
+*.d
+*.bak
+bin/log/
+bin/wbot.exe
+.vscode
+
