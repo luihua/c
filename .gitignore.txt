@@ -1,0 +1,7 @@
+*.json
+*.o
+*.d
+*.bak
+bin/log/
+bin/wbot.exe
+.vscode
